@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Secret Messenger 🔐</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Emoji Secret Messenger 🔐</h1>
+      <p class="instructions">
+        Encode your message → send emojis → friend decodes it here.
+      </p>
+
+      <textarea
+        id="inputText"
+        placeholder="Type or paste your message / emoji code here…"
+        rows="5"
+        spellcheck="false"
+      ></textarea>
+
+      <div class="button-group">
+        <button id="encodeBtn">Encode</button>
+        <button id="decodeBtn">Decode</button>
+        <button id="copyBtn">Copy Result</button>
+      </div>
+
+      <div id="resultBox" class="result-box">
+        <span class="placeholder-text">Your result will appear here…</span>
+      </div>
+
+      <!-- Toast notification for clipboard copy -->
+      <div id="toast" class="toast">Copied to clipboard!</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

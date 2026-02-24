@@ -1,0 +1,170 @@
+/* ===========================
+   Base / Reset
+   =========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   Page Layout
+   =========================== */
+body {
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===========================
+   Title
+   =========================== */
+h1 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  text-align: center;
+  color: #00ffe7; /* neon cyan */
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px #00ffe7aa;
+}
+
+/* ===========================
+   Instruction text
+   =========================== */
+.instructions {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* ===========================
+   Textarea
+   =========================== */
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  border: 1.5px solid #00ffe755;
+  border-radius: 12px;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+textarea:focus {
+  border-color: #00ffe7;
+  box-shadow: 0 0 8px #00ffe744;
+}
+
+textarea::placeholder {
+  color: #555;
+}
+
+/* ===========================
+   Button group
+   =========================== */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px 16px;
+  border: 1.5px solid #00ffe7;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #00ffe7;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+}
+
+button:hover {
+  background-color: #00ffe7;
+  color: #0d0d0d;
+  box-shadow: 0 0 14px #00ffe799;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ===========================
+   Result box
+   =========================== */
+.result-box {
+  width: 100%;
+  min-height: 80px;
+  padding: 14px 16px;
+  background-color: #1a1a1a;
+  border: 1.5px solid #00ffe733;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  word-break: break-all;
+  white-space: pre-wrap;
+  color: #e0e0e0;
+}
+
+.placeholder-text {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   Toast notification
+   =========================== */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: #00ffe7;
+  color: #0d0d0d;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===========================
+   Responsive tweaks
+   =========================== */
+@media (max-width: 400px) {
+  .button-group {
+    flex-direction: column;
+  }
+}
